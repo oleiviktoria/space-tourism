@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0 2rem 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-decoration: none;
+  height: 6rem;
+  list-style: none;
+  width: 60%;
+  padding-left: 2rem;
+  background-color: rgba(160, 158, 158, 0.053);
+  backdrop-filter: blur(20px);
+  gap: 1.5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-links {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-item {
+  text-decoration: none;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+}
+
+.navbar-container {
   display: flex;
   flex-direction: column;
+  font-family: "Bellefair Regular", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/****************************************************************/
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  background: url("/src/assets/home/background-home-desktop.jpg") center
+    center/cover no-repeat;
+  height: 100vh;
+}
+
+.home {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  width: 100%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.home-welcome {
+  display: flex;
+  flex-direction: column;
+  width: 28.125;
+  height: 23.875;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-welcome h1 {
+  font-family: "Bellefair", serif;
+  font-weight: normal;
+  font-size: 9.4rem;
+  padding-bottom: 5rem;
+}
+
+.welcome-text {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+  letter-spacing: 4.72px;
+  padding-bottom: 3rem;
+}
+
+p {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  font-size: 18px;
+  letter-spacing: 2.7px;
+  width: 40rem;
+}
+
+.decorate {
+  height: 0.1rem;
+  width: 25rem;
+  background-color: rgb(62, 63, 63);
+  border: none;
+  margin-left: 4.5rem;
+}
+
+.circle-container {
+  display: flex;
+}
+
+.circle {
+  height: 17.125rem;
+  width: 17.125rem;
+  border: none;
+  border-radius: 100%;
+  background-color: #ffffff;
+  color: #0b0d17;
+  font-size: 2rem;
+  font-family: "Bellefair", serif;
+}
+
+/*********************************************/
+
+.destination-container {
+  display: flex;
+  flex-direction: column;
+  background: url("/src/assets/destination/background-destination-desktop.jpg")
+    center center/cover no-repeat;
+  height: 100vh;
+  color: white;
+}
+.destination {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+.planet-welcome {
+  display: flex;
+  flex-direction: column;
+}
+.planet {
+  display: flex;
+  flex-direction: column;
+}
+.planet ul {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  height: 6rem;
+  list-style: none;
+  width: 20rem;
+}
+
+.planet button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #fff;
+  font-family: "Bellefair Regular", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.planet li:hover,
+.planet li:focus {
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+}
+
+.planet-disc {
+  width: 39rem;
+  padding-bottom: 5rem;
+}
+
+.planet-name {
+  font-family: Bellefair, serif;
+  font-weight: 400;
+  font-size: 6.25rem;
 }
