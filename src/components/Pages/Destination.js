@@ -6,8 +6,8 @@ function Destination({ data }) {
   const [planetDescription, setPlanetDescription] = useState(
     data[0].description
   );
-  const [planetDistance, setPlanetDistance] = useState(data[0].distance);
-  const [planetTravel, setPlanetTravel] = useState(data[0].travel);
+  const [planetDistance, setPlanetDistance] = useState(data[0].distance.toUpperCase());
+  const [planetTravel, setPlanetTravel] = useState(data[0].travel.toUpperCase());
   const [planetImg, setPlanetImg] = useState(data[0].images.png);
 
   function planetChange(index) {
@@ -42,19 +42,22 @@ function Destination({ data }) {
               </li>
             ))}
           </ul>
+ 
           <div>
             <h2 className="planet-name">{planet}</h2>
             <p className="planet-disc">{planetDescription}</p>
           </div>
 
-          <div>
-            <span>AVG. DISTANCE</span>
-            <span>{planetDistance}</span>
+          <div className="planet-info">          
+            <div className="planet-distance">
+            <span className="planet-text">AVG. DISTANCE</span>
+            <span className="planet-dist-time">{planetDistance}</span>
           </div>
-          <div>
-            <span>EST. TRAVEL TIME</span>
-            <span>{planetTravel}</span>
-          </div>
+          <div className="planet-time">
+            <span className="planet-text">EST. TRAVEL TIME</span>
+            <span className="planet-dist-time">{planetTravel}</span>
+          </div></div>
+
         </div>
       </div>
     </div>

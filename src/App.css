@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Bellefair Regular", sans-serif;
 }
 
 .navbar {
@@ -138,25 +138,25 @@ p {
 }
 .destination {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   height: 100vh;
   width: 100%;
-  color: white;
+  margin-top: 5rem;
+  margin-left: 15rem;
 }
 .planet-welcome {
   display: flex;
   flex-direction: column;
+  margin-right: 20rem;
 }
 .planet {
-  display: flex;
-  flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 2rem;
 }
 .planet ul {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
-  height: 6rem;
+  height: 2rem;
   list-style: none;
   width: 20rem;
 }
@@ -173,18 +173,109 @@ p {
 }
 
 .planet li:hover,
-.planet li:focus {
+.planet li:active {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
-}
-
-.planet-disc {
-  width: 39rem;
-  padding-bottom: 5.5rem;
 }
 
 .planet-name {
   font-family: Bellefair, serif;
   font-weight: 400;
   font-size: 6.25rem;
+  margin-top: 2rem;
+}
+
+.planet-disc {
+  width: 39rem;
+  height: 12rem;
+  padding-bottom: 5.5rem;
+  margin-top: 2rem;
+}
+
+.planet-info {
+display: flex;
+height: 5rem;
+}
+
+.planet-text {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  letter-spacing: 2.35px;
+}
+
+.planet-dist-time {
+  font-family: Bellefair, serif;
+  font-size: 1.75rem;
+}
+
+.planet-distance, .planet-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 20rem;
+}
+
+/*********************************************/
+
+.crew-container {
+  display: flex;
+  flex-direction: column;
+  background: url("/src/assets/crew/background-crew-desktop.jpg")
+    center center/cover no-repeat;
+  height: 100vh;
+  color: white;
+}
+
+.crew {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  margin-top: 5rem;
+  margin-left: 15rem;
+}
+.crew-welcome {
+  display: flex;
+  flex-direction: column;
+}
+
+.crew-welcome h4 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: rgb(255 254 254 / 20%);
+}
+
+.crew-welcome h3 {
+  font-family: Bellefair, serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  margin-top: 2rem;
+}
+
+.crew-welcome ul {
+  display: flex;
+  list-style: none;
+}
+
+.crew-welcome button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100%;
+  margin-right: 2rem;
+  background-color: rgb(255 254 254 / 20%);
+  border:black;
+}
+
+.crew-welcome button:hover,
+.crew-welcome button:active {
+  background-color: white;
+}
+
+.crew-welcome p {
+  height: 15rem;
+  margin-top: 2rem;
+}
+
+.crew-img {
+  margin-left: 10rem;
 }
