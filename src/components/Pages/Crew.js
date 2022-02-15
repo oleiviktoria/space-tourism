@@ -13,10 +13,10 @@ function Crew({data}) {
   }
 
   return (
-  <div className="crew-container">
+  <div className="crew-container container">
       <NavBar />
       <div className="crew">
-        <div className="crew-welcome">
+      <div className="crew-text">
           <h5 className="welcome-text">02 MEET YOUR CREW</h5>
           <h4>{role}</h4>
           <h3>{name}</h3>
@@ -30,14 +30,13 @@ function Crew({data}) {
               </li>
             ))}
           </ul>
-        </div>
-  <div className="crew-img">     <img
+          </div>
+ <img
               src={require("../../assets/crew/image-douglas-hurley.png")}
               alt="planet"
-            /></div>
-      </div>
- 
-      </div>
+              className="crew-img"
+              />
+      </div></div>
   )
 }
 

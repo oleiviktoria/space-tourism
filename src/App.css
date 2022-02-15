@@ -3,13 +3,14 @@
   margin: 0;
   padding: 0;
   font-family: "Bellefair Regular", sans-serif;
+  color: white;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0 2rem 2rem;
+  padding: 2rem 0 5rem 2rem;
 }
 
 .nav-items {
@@ -53,13 +54,15 @@
 }
 
 /****************************************************************/
-
-.home-container {
+.container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+.home-container {
   background: url("/src/assets/home/background-home-desktop.jpg") center
     center/cover no-repeat;
-  height: 100vh;
 }
 
 .home {
@@ -90,7 +93,7 @@
   font-size: 1.75rem;
   font-weight: normal;
   letter-spacing: 4.72px;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 p {
@@ -129,29 +132,33 @@ p {
 /*********************************************/
 
 .destination-container {
-  display: flex;
-  flex-direction: column;
   background: url("/src/assets/destination/background-destination-desktop.jpg")
     center center/cover no-repeat;
-  height: 100vh;
-  color: white;
 }
-.destination {
+.destination, .crew, .technology-container {
   display: flex;
   height: 100vh;
   width: 100%;
-  margin-top: 5rem;
-  margin-left: 15rem;
+  /* padding-top: 5rem; */
+  padding-left: 7rem;
 }
+
 .planet-welcome {
   display: flex;
   flex-direction: column;
-  margin-right: 20rem;
+  margin-right: 10rem;
 }
 .planet {
-  margin-top: 5rem;
-  margin-left: 2rem;
+  /* margin-top: 5rem; */
+  display: flex;
+  flex-direction: column;
 }
+
+.planet-img {
+  height: 23rem;
+  width: 23rem;
+}
+
 .planet ul {
   display: flex;
   justify-content: space-between;
@@ -162,6 +169,7 @@ p {
 }
 
 .planet button {
+  display: flex;
   text-decoration: none;
   border: none;
   background-color: transparent;
@@ -179,6 +187,7 @@ p {
 }
 
 .planet-name {
+  display: flex;
   font-family: Bellefair, serif;
   font-weight: 400;
   font-size: 6.25rem;
@@ -186,6 +195,7 @@ p {
 }
 
 .planet-disc {
+  display: flex;
   width: 39rem;
   height: 12rem;
   padding-bottom: 5.5rem;
@@ -219,24 +229,21 @@ height: 5rem;
 /*********************************************/
 
 .crew-container {
-  display: flex;
-  flex-direction: column;
   background: url("/src/assets/crew/background-crew-desktop.jpg")
     center center/cover no-repeat;
-  height: 100vh;
-  color: white;
+    height: 100vh;
 }
 
 .crew {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  margin-top: 5rem;
-  margin-left: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "text img";
+  grid-column-gap: 1rem;
 }
-.crew-welcome {
-  display: flex;
-  flex-direction: column;
+
+.crew-text {
+  grid-area: text;
 }
 
 .crew-welcome h4 {
@@ -245,19 +252,19 @@ height: 5rem;
   color: rgb(255 254 254 / 20%);
 }
 
-.crew-welcome h3 {
+h3 {
   font-family: Bellefair, serif;
   font-weight: 400;
   font-size: 3.5rem;
   margin-top: 2rem;
 }
 
-.crew-welcome ul {
+.crew ul {
   display: flex;
   list-style: none;
 }
 
-.crew-welcome button {
+.crew button {
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 100%;
@@ -266,16 +273,80 @@ height: 5rem;
   border:black;
 }
 
-.crew-welcome button:hover,
-.crew-welcome button:active {
+.crew button:hover,
+.crew button:active {
   background-color: white;
 }
 
-.crew-welcome p {
-  height: 15rem;
+.crew p {
+  height: 12rem;
   margin-top: 2rem;
 }
 
 .crew-img {
-  margin-left: 10rem;
+  grid-area: img;
+  height: 75%;
+  padding-right: 5rem;
+}
+
+/*********************************************/
+
+.technology-container {
+  background: url("/src/assets/technology/background-technology-desktop.jpg")
+    center center/cover no-repeat;
+  height: 100vh;
+}
+
+.technology {
+  display: grid;
+  grid-template-columns: 1fr fr 1fr;
+  grid-template-areas: 
+  "ul technology-text img";
+  grid-column-gap: 1rem;
+}
+
+.technology ul {
+  grid-area: ul;
+}
+
+.technology-text {
+  grid-area: technology-text;
+}
+
+.technology img {
+  grid-area: img;
+  align-self: stretch;
+}
+
+.technology button {
+  height: 7rem;
+  width: 7rem;
+  border-color: white;
+  border-radius: 100%;
+  font-size: 2rem;
+  font-family: "Bellefair", serif;
+  background-color: transparent;
+}
+
+
+.technology li {
+  padding-bottom: 2rem;
+  /* padding-right: 7rem; */
+  /* display: flex; */
+  list-style: none;
+}
+
+.technology button:hover,
+.technology button:active {
+  background-color: white;
+  color: black;
+}
+
+.technology-text h5 {
+  letter-spacing: 3px;
+}
+
+.technology-text h3 {
+  padding-bottom: 2rem;
+
 }

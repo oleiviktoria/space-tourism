@@ -3,7 +3,7 @@ import NavBar from "../NavBar";
 
 function Home() {
   return (
-    <div className="home-container">
+    <div className="home-container container">
       <NavBar />
       <div className="home">
         <div className="home-welcome">

@@ -19,17 +19,18 @@ function Destination({ data }) {
   }
 
   return (
-    <div className="destination-container">
+    <div className="destination-container container">
       <NavBar />
       <div className="destination">
         <div className="planet-welcome">
           <h5 className="welcome-text">01 PICK YOUR DESTINATION</h5>
-          <div className="planet-img">
+          
             <img
               src={require("../../assets/destination/image-moon.png")}
               alt="planet"
+              className="planet-img"
             />
-          </div>
+        
         </div>
 
         <div className="planet">
