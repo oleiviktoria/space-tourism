@@ -200,10 +200,13 @@ p {
   letter-spacing: 1px;
 }
 
-.planet li:hover,
-.planet li:active {
+.planet li:hover {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
+}
+
+.planet-active {
+  border-bottom: 4px solid #fff;
 }
 
 .planet-name {
@@ -294,9 +297,12 @@ h3 {
   border: black;
 }
 
-.crew button:hover,
-.crew button:active {
+.crew button:hover {
   background-color: white;
+}
+
+.crew-active {
+  background-color: white !important;
 }
 
 .crew p {
@@ -358,9 +364,13 @@ h3 {
   list-style: none;
 }
 
-.technology button:hover,
-.technology button:active {
+.technology button:hover {
   background-color: white;
+  color: black;
+}
+
+.tech-active {
+  background-color: white !important;
   color: black;
 }
 

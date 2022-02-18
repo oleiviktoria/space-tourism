@@ -6,12 +6,13 @@ function Technology({ data }) {
   const [name, setName] = useState(data[0].name.toUpperCase());
   const [description, setDescription] = useState(data[0].description);
   const [image, setImage] = useState(data[0].images.portrait);
+  const [activeId, setActiveId] = useState();
 
   function technologyChange(index) {
     setDescription(data[index].description);
     setName(data[index].name.toUpperCase());
     setImage(data[index].image);
-    console.log(index);
+    setActiveId(index);
   }
 
   return (
@@ -26,7 +27,10 @@ function Technology({ data }) {
               <ul className="welcome-ul">
                 {data.map((name, index) => (
                   <li key={index}>
-                    <button onClick={() => technologyChange(index)}>
+                    <button
+                      onClick={() => technologyChange(index)}
+                      className={activeId === index ? "tech-active" : null}
+                    >
                       {index + 1}
                     </button>
                   </li>
