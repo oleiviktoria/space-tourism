@@ -2,14 +2,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Bellefair Regular", sans-serif;
+  color: white;
+}
+
+html {
+  font-size: 20px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0 2rem 2rem;
+  padding: 2rem 0 5rem 2rem;
 }
 
 .nav-items {
@@ -53,25 +58,37 @@
 }
 
 /****************************************************************/
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-top: 10rem;
+}
 
-.home-container {
+.container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+
+  width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-container {
   background: url("/src/assets/home/background-home-desktop.jpg") center
     center/cover no-repeat;
-  height: 100vh;
 }
 
 .home {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text img";
+  grid-column-gap: 1rem;
 }
 
 .home-welcome {
+  grid-area: text;
   display: flex;
   flex-direction: column;
   width: 28.125;
@@ -90,7 +107,7 @@
   font-size: 1.75rem;
   font-weight: normal;
   letter-spacing: 4.72px;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 p {
@@ -98,7 +115,7 @@ p {
   font-style: normal;
   font-weight: normal;
   line-height: 32px;
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 2.7px;
   width: 40rem;
 }
@@ -112,7 +129,9 @@ p {
 }
 
 .circle-container {
-  display: flex;
+  grid-area: img;
+  justify-self: center;
+  align-self: end;
 }
 
 .circle {
@@ -129,39 +148,48 @@ p {
 /*********************************************/
 
 .destination-container {
-  display: flex;
-  flex-direction: column;
   background: url("/src/assets/destination/background-destination-desktop.jpg")
     center center/cover no-repeat;
-  height: 100vh;
-  color: white;
 }
-.destination {
+.destination-container,
+.crew-container,
+.technology-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   height: 100vh;
   width: 100%;
-  color: white;
 }
+
+.destination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img text";
+  grid-column-gap: 1rem;
+}
+
 .planet-welcome {
-  display: flex;
-  flex-direction: column;
+  grid-area: img;
+  justify-self: center;
 }
 .planet {
-  display: flex;
-  flex-direction: column;
+  grid-area: text;
 }
+
+.planet-img {
+  height: 23rem;
+  width: 23rem;
+}
+
 .planet ul {
   display: flex;
   justify-content: space-between;
   text-decoration: none;
-  height: 6rem;
+  height: 2rem;
   list-style: none;
   width: 20rem;
 }
 
 .planet button {
+  display: flex;
   text-decoration: none;
   border: none;
   background-color: transparent;
@@ -172,19 +200,184 @@ p {
   letter-spacing: 1px;
 }
 
-.planet li:hover,
-.planet li:focus {
+.planet li:hover {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
 }
 
-.planet-disc {
-  width: 39rem;
-  padding-bottom: 5.5rem;
+.planet-active {
+  border-bottom: 4px solid #fff;
 }
 
 .planet-name {
+  display: flex;
   font-family: Bellefair, serif;
   font-weight: 400;
   font-size: 6.25rem;
+  margin-top: 2rem;
+}
+
+.planet-disc {
+  display: flex;
+  width: 39rem;
+  height: 12rem;
+  padding-bottom: 5.5rem;
+  margin-top: 2rem;
+}
+
+.planet-info {
+  display: flex;
+  height: 5rem;
+}
+
+.planet-text {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  letter-spacing: 2.35px;
+}
+
+.planet-dist-time {
+  font-family: Bellefair, serif;
+  font-size: 1.75rem;
+}
+
+.planet-distance,
+.planet-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 20rem;
+}
+
+/*********************************************/
+
+.crew-container {
+  background: url("/src/assets/crew/background-crew-desktop.jpg") center
+    center/cover no-repeat;
+  height: 100vh;
+}
+
+.crew {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text img";
+  grid-column-gap: 1rem;
+}
+
+.crew-text {
+  grid-area: text;
+  justify-self: center;
+}
+
+.crew-welcome h4 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: rgb(255 254 254 / 20%);
+}
+
+h3 {
+  font-family: Bellefair, serif;
+  font-weight: 400;
+  font-size: 3.5rem;
+  margin-top: 2rem;
+}
+
+.crew ul {
+  display: flex;
+  list-style: none;
+}
+
+.crew button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100%;
+  margin-right: 2rem;
+  background-color: rgb(255 254 254 / 20%);
+  border: black;
+}
+
+.crew button:hover {
+  background-color: white;
+}
+
+.crew-active {
+  background-color: white !important;
+}
+
+.crew p {
+  height: 12rem;
+  margin-top: 2rem;
+}
+
+.crew-img {
+  grid-area: img;
+  justify-self: center;
+  height: 75%;
+  padding-right: 5rem;
+}
+
+/*********************************************/
+
+.technology-container {
+  background: url("/src/assets/technology/background-technology-desktop.jpg")
+    center center/cover no-repeat;
+  height: 100vh;
+}
+
+.technology {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text img";
+  grid-column-gap: 1rem;
+}
+
+.technology-description {
+  grid-area: text;
+}
+
+.technology-img {
+  grid-area: img;
+  align-self: stretch;
+}
+
+.tech_text {
+  display: flex;
+}
+
+.technology-text {
+  padding: 3rem;
+}
+
+.technology button {
+  height: 7rem;
+  width: 7rem;
+  border-color: white;
+  border-radius: 100%;
+  font-size: 2rem;
+  font-family: "Bellefair", serif;
+  background-color: transparent;
+}
+
+.technology li {
+  padding-bottom: 2rem;
+  list-style: none;
+}
+
+.technology button:hover {
+  background-color: white;
+  color: black;
+}
+
+.tech-active {
+  background-color: white !important;
+  color: black;
+}
+
+.technology-text h5 {
+  letter-spacing: 3px;
+}
+
+.technology-text h3 {
+  padding-bottom: 2rem;
 }
