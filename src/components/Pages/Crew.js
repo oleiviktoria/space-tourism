@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../NavBar";
+import Container from "./Container";
 
 function Crew({data}) {
   const [role, setRole] = useState(data[0].role.toUpperCase());
@@ -15,6 +16,7 @@ function Crew({data}) {
   return (
   <div className="crew-container container">
       <NavBar />
+      <Container>
       <div className="crew">
       <div className="crew-text">
           <h5 className="welcome-text">02 MEET YOUR CREW</h5>
@@ -36,7 +38,9 @@ function Crew({data}) {
               alt="planet"
               className="crew-img"
               />
-      </div></div>
+      </div>
+      </Container>
+      </div>
   )
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "../NavBar";
+import Container from "./Container";
 
 function Destination({ data }) {
   const [planet, setPlanet] = useState(data[0].name.toUpperCase());
@@ -21,6 +22,7 @@ function Destination({ data }) {
   return (
     <div className="destination-container container">
       <NavBar />
+      <Container>
       <div className="destination">
         <div className="planet-welcome">
           <h5 className="welcome-text">01 PICK YOUR DESTINATION</h5>
@@ -60,7 +62,8 @@ function Destination({ data }) {
           </div></div>
 
         </div>
-      </div>
+        </div>
+      </Container>
     </div>
   );
 }

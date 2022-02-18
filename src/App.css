@@ -6,6 +6,10 @@
   color: white;
 }
 
+html {
+  font-size: 20px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -54,10 +58,21 @@
 }
 
 /****************************************************************/
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-top: 10rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
+  width: 100rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-container {
@@ -66,15 +81,14 @@
 }
 
 .home {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text img";
+  grid-column-gap: 1rem;
 }
 
 .home-welcome {
+  grid-area: text;
   display: flex;
   flex-direction: column;
   width: 28.125;
@@ -101,7 +115,7 @@ p {
   font-style: normal;
   font-weight: normal;
   line-height: 32px;
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 2.7px;
   width: 40rem;
 }
@@ -115,7 +129,9 @@ p {
 }
 
 .circle-container {
-  display: flex;
+  grid-area: img;
+  justify-self: center;
+  align-self: end;
 }
 
 .circle {
@@ -135,23 +151,27 @@ p {
   background: url("/src/assets/destination/background-destination-desktop.jpg")
     center center/cover no-repeat;
 }
-.destination, .crew, .technology-container {
+.destination-container,
+.crew-container,
+.technology-container {
   display: flex;
   height: 100vh;
   width: 100%;
-  /* padding-top: 5rem; */
-  padding-left: 7rem;
+}
+
+.destination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img text";
+  grid-column-gap: 1rem;
 }
 
 .planet-welcome {
-  display: flex;
-  flex-direction: column;
-  margin-right: 10rem;
+  grid-area: img;
+  justify-self: center;
 }
 .planet {
-  /* margin-top: 5rem; */
-  display: flex;
-  flex-direction: column;
+  grid-area: text;
 }
 
 .planet-img {
@@ -203,8 +223,8 @@ p {
 }
 
 .planet-info {
-display: flex;
-height: 5rem;
+  display: flex;
+  height: 5rem;
 }
 
 .planet-text {
@@ -219,7 +239,8 @@ height: 5rem;
   font-size: 1.75rem;
 }
 
-.planet-distance, .planet-time {
+.planet-distance,
+.planet-time {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -229,21 +250,21 @@ height: 5rem;
 /*********************************************/
 
 .crew-container {
-  background: url("/src/assets/crew/background-crew-desktop.jpg")
-    center center/cover no-repeat;
-    height: 100vh;
+  background: url("/src/assets/crew/background-crew-desktop.jpg") center
+    center/cover no-repeat;
+  height: 100vh;
 }
 
 .crew {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "text img";
+  grid-template-areas: "text img";
   grid-column-gap: 1rem;
 }
 
 .crew-text {
   grid-area: text;
+  justify-self: center;
 }
 
 .crew-welcome h4 {
@@ -270,7 +291,7 @@ h3 {
   border-radius: 100%;
   margin-right: 2rem;
   background-color: rgb(255 254 254 / 20%);
-  border:black;
+  border: black;
 }
 
 .crew button:hover,
@@ -285,6 +306,7 @@ h3 {
 
 .crew-img {
   grid-area: img;
+  justify-self: center;
   height: 75%;
   padding-right: 5rem;
 }
@@ -299,23 +321,26 @@ h3 {
 
 .technology {
   display: grid;
-  grid-template-columns: 1fr fr 1fr;
-  grid-template-areas: 
-  "ul technology-text img";
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text img";
   grid-column-gap: 1rem;
 }
 
-.technology ul {
-  grid-area: ul;
+.technology-description {
+  grid-area: text;
+}
+
+.technology-img {
+  grid-area: img;
+  align-self: stretch;
+}
+
+.tech_text {
+  display: flex;
 }
 
 .technology-text {
-  grid-area: technology-text;
-}
-
-.technology img {
-  grid-area: img;
-  align-self: stretch;
+  padding: 3rem;
 }
 
 .technology button {
@@ -328,11 +353,8 @@ h3 {
   background-color: transparent;
 }
 
-
 .technology li {
   padding-bottom: 2rem;
-  /* padding-right: 7rem; */
-  /* display: flex; */
   list-style: none;
 }
 
@@ -348,5 +370,4 @@ h3 {
 
 .technology-text h3 {
   padding-bottom: 2rem;
-
 }

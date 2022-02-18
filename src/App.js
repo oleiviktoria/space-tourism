@@ -5,6 +5,7 @@ import Home from "./components/Pages/Home";
 import Destination from "./components/Pages/Destination";
 import Crew from "./components/Pages/Crew";
 import Technology from "./components/Pages/Technology";
+
 const data = require("./data.json");
 
 function App() {
