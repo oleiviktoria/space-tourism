@@ -14,7 +14,7 @@ function Destination({ data }) {
     data[0].travel.toUpperCase()
   );
   const [planetImg, setPlanetImg] = useState(data[0].images.png);
-  const [activeId, setActiveId] = useState();
+  const [activeId, setActiveId] = useState(0);
 
   function planetChange(index) {
     setPlanet(data[index].name.toUpperCase());

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import NavBar from "../NavBar";
 import Container from "./Container";
 
@@ -18,9 +20,9 @@ function Home() {
               this world experience!
             </p>
           </div>
-          <div className="circle-container">
+          <Link to="/destination" className="circle-container">
             <button className="circle">EXPLORE</button>
-          </div>
+          </Link>
         </div>
       </Container>
     </div>

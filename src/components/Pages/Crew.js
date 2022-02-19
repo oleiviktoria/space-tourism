@@ -6,7 +6,7 @@ function Crew({ data }) {
   const [role, setRole] = useState(data[0].role.toUpperCase());
   const [name, setName] = useState(data[0].name.toUpperCase());
   const [bio, setBio] = useState(data[0].bio);
-  const [activeId, setActiveId] = useState();
+  const [activeId, setActiveId] = useState(0);
 
   function crewChange(index) {
     setRole(data[index].role.toUpperCase());
