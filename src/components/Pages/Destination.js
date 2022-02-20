@@ -25,7 +25,6 @@ function Destination({ data }) {
     console.log(planetImg);
     setActiveId(index);
   }
-  //`Entry ${planetImg}`
 
   return (
     <div className="destination-container container">
@@ -36,9 +35,10 @@ function Destination({ data }) {
             <h5 className="welcome-text">01 PICK YOUR DESTINATION</h5>
 
             <img
-              //src={require("../../assets/destination/image-moon.png")}
+              src={require("../../assets/destination/image-moon.png")}
               //src={require(planetImg)}
-              src={planetImg}
+              //src={planetImg}
+              //src="../../assets/destination/image-moon.png"
               alt="planet"
               className="planet-img"
             />
