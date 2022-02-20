@@ -2,17 +2,25 @@ import React, { useState } from "react";
 import NavBar from "../NavBar";
 import Container from "./Container";
 
+import vehicle from "../../assets/technology/image-launch-vehicle-portrait.jpg";
+import capsule from "../../assets/technology/image-space-capsule-portrait.jpg";
+import spaceport from "../../assets/technology/image-spaceport-portrait.jpg";
+
 function Technology({ data }) {
+  const images = [vehicle, spaceport, capsule];
+
   const [name, setName] = useState(data[0].name.toUpperCase());
   const [description, setDescription] = useState(data[0].description);
   const [image, setImage] = useState(data[0].images.portrait);
   const [activeId, setActiveId] = useState(0);
+  const [imagesAsData, setImagesAsData] = useState(images[0]);
 
   function technologyChange(index) {
     setDescription(data[index].description);
     setName(data[index].name.toUpperCase());
     setImage(data[index].image);
     setActiveId(index);
+    setImagesAsData(images[index]);
   }
 
   return (
@@ -43,11 +51,7 @@ function Technology({ data }) {
               </div>
             </div>
           </div>
-          <img
-            src={require("../../assets/technology/image-launch-vehicle-portrait.jpg")}
-            alt="technology"
-            className="technology-img"
-          />
+          <img src={imagesAsData} alt="technology" className="technology-img" />
         </div>
       </Container>
     </div>

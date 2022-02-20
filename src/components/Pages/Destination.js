@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import NavBar from "../NavBar";
 import Container from "./Container";
 
+import moon from "../../assets/destination/image-moon.png";
+import mars from "../../assets/destination/image-mars.png";
+import titan from "../../assets/destination/image-titan.png";
+import europa from "../../assets/destination/image-europa.png";
+
 function Destination({ data }) {
+  const images = [moon, mars, europa, titan];
+
   const [planet, setPlanet] = useState(data[0].name.toUpperCase());
   const [planetDescription, setPlanetDescription] = useState(
     data[0].description
@@ -13,17 +20,16 @@ function Destination({ data }) {
   const [planetTravel, setPlanetTravel] = useState(
     data[0].travel.toUpperCase()
   );
-  const [planetImg, setPlanetImg] = useState(`../.${data[0].images.png}`);
   const [activeId, setActiveId] = useState(0);
+  const [imagesAsData, setImagesAsData] = useState(images[0]);
 
   function planetChange(index) {
     setPlanet(data[index].name.toUpperCase());
     setPlanetDescription(data[index].description);
     setPlanetDistance(data[index].distance);
     setPlanetTravel(data[index].travel);
-    setPlanetImg(`../.${data[index].images.png}`);
-    console.log(planetImg);
     setActiveId(index);
+    setImagesAsData(images[index]);
   }
 
   return (
@@ -33,11 +39,7 @@ function Destination({ data }) {
         <div className="destination">
           <div className="planet-welcome">
             <h5 className="welcome-text">01 PICK YOUR DESTINATION</h5>
-            <img
-              src={require("../../assets/destination/image-moon.png")}
-              alt="planet"
-              className="planet-img"
-            />
+            <img src={imagesAsData} alt="planet" className="planet-img" />
           </div>
 
           <div className="planet">
