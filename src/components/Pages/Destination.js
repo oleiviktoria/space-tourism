@@ -33,12 +33,8 @@ function Destination({ data }) {
         <div className="destination">
           <div className="planet-welcome">
             <h5 className="welcome-text">01 PICK YOUR DESTINATION</h5>
-
             <img
               src={require("../../assets/destination/image-moon.png")}
-              //src={require(planetImg)}
-              //src={planetImg}
-              //src="../../assets/destination/image-moon.png"
               alt="planet"
               className="planet-img"
             />
