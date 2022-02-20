@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
-  const [activeId, setActiveId] = useState(0);
-
   const navData = [
     { link: "/", text: "00 HOME" },
     { link: "/destination", text: "01 DESTINATION" },
@@ -11,11 +9,10 @@ function NavBar() {
     { link: "/technology", text: "03 TECHNOLOGY" },
   ];
 
-  // let location = useLocation();
+  let { pathname } = useLocation();
 
-  function navBarChange(index) {
-    setActiveId(index);
-    // console.log(activeId);
+  function getNavItemClasses(path) {
+    return `nav-item${pathname === path ? " nav-active" : ""}`;
   }
 
   return (
@@ -34,11 +31,7 @@ function NavBar() {
         </div>
         <ul className="nav-items">
           {navData.map((name, index) => (
-            <li
-              key={index}
-              className={activeId === index ? "nav-item " + "nav-active" : null}
-              onClick={() => navBarChange(index)}
-            >
+            <li key={index} className={getNavItemClasses(name.link)}>
               <Link to={name.link} className="nav-links">
                 {name.text}
               </Link>
