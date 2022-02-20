@@ -1,7 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-function NavBar(props) {
+function NavBar() {
+  const navData = [
+    { link: "/", text: "00 HOME" },
+    { link: "/destination", text: "01 DESTINATION" },
+    { link: "/crew", text: "02 CREW" },
+    { link: "/technology", text: "03 TECHNOLOGY" },
+  ];
+
+  let { pathname } = useLocation();
+
+  function getNavItemClasses(path) {
+    return `nav-item${pathname === path ? " nav-active" : ""}`;
+  }
+
   return (
     <div className="navbar-container">
       <nav className="navbar">
@@ -16,28 +29,14 @@ function NavBar(props) {
             </g>
           </svg>
         </div>
-        {/* <div className="decorate"></div> */}
         <ul className="nav-items">
-          <li className="nav-item">
-            <Link to="/" className="nav-links">
-              00 HOME
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/destination" className="nav-links">
-              01 DESTINATION
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/crew" className="nav-links">
-              02 CREW
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/technology" className="nav-links">
-              03 TECHNOLOGY
-            </Link>
-          </li>
+          {navData.map((name, index) => (
+            <li key={index} className={getNavItemClasses(name.link)}>
+              <Link to={name.link} className="nav-links">
+                {name.text}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

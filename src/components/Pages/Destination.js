@@ -13,16 +13,16 @@ function Destination({ data }) {
   const [planetTravel, setPlanetTravel] = useState(
     data[0].travel.toUpperCase()
   );
-  const [planetImg, setPlanetImg] = useState(data[0].images.png);
-  const [activeId, setActiveId] = useState();
+  const [planetImg, setPlanetImg] = useState(`../.${data[0].images.png}`);
+  const [activeId, setActiveId] = useState(0);
 
   function planetChange(index) {
     setPlanet(data[index].name.toUpperCase());
     setPlanetDescription(data[index].description);
     setPlanetDistance(data[index].distance);
     setPlanetTravel(data[index].travel);
-    setPlanetImg(data[index].images.png);
-
+    setPlanetImg(`../.${data[index].images.png}`);
+    console.log(planetImg);
     setActiveId(index);
   }
 
@@ -33,7 +33,6 @@ function Destination({ data }) {
         <div className="destination">
           <div className="planet-welcome">
             <h5 className="welcome-text">01 PICK YOUR DESTINATION</h5>
-
             <img
               src={require("../../assets/destination/image-moon.png")}
               alt="planet"

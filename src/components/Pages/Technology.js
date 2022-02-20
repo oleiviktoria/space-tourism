@@ -6,7 +6,7 @@ function Technology({ data }) {
   const [name, setName] = useState(data[0].name.toUpperCase());
   const [description, setDescription] = useState(data[0].description);
   const [image, setImage] = useState(data[0].images.portrait);
-  const [activeId, setActiveId] = useState();
+  const [activeId, setActiveId] = useState(0);
 
   function technologyChange(index) {
     setDescription(data[index].description);
